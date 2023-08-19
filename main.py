@@ -44,6 +44,7 @@ print(f"Novo Saldo da conta de {conta_jose.titular} é {conta_jose.saldo}!")
 #conta_jose.sacar(450)
 #print(f"Novo Saldo da conta de {conta_pedro.titular} é {conta_pedro.saldo}!")
 print(f'{25*"-"}Transferência{25*"-"}')
+
 conta_pedro.transferir(500,conta_jose)   
 print(f"Novo Saldo da conta de {conta_pedro.titular} é {conta_pedro.saldo}!")
 print(f"Novo Saldo da conta de {conta_jose.titular} é {conta_jose.saldo}!")
