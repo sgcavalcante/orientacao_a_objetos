@@ -19,18 +19,42 @@ class Lampada():
     def desligar(self): #sempre temm que passar o contexto
         self.__estado = False
     
-    def get_tensao(self):
-        return self.__tensao
-    
-    def get_cor(self):
-        return self.__cor
-    
-    def get_potencia(self):
+    #métodos de acessos - acessores
+    #get = ler
+    #set = alterar
+    #decorator property faz com que o metdodo se comporte como atributo
+    @property
+    def potencia(self):
         return self.__potencia
+    @potencia.setter
+    def potencia(self,nova_potencia):
+        if nova_potencia >0:
+            self.__potencia = nova_potencia
+        else:
+            raise TypeError ("Potencia inválida!")       
     
-    def get_estado(self):
+    @property
+    def tensao(self):
+        return self.__tensao
+    @tensao.setter
+    def tensao(self,nova_tensao):
+        self.__tensao = nova_tensao
+    
+    @property
+    def cor(self):
+        return self.__cor
+    @cor.setter
+    def cor(self,nova_cor):
+        self.__cor = nova_cor
+
+    @property    
+    def estado(self):
         return self.__estado
+    @estado.setter
+    def estado(self,novo_estado):
+        self.__estado = novo_estado
     
+
     def iluminar(self):
         pass    
 
