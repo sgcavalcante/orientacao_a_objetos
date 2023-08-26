@@ -1,5 +1,6 @@
 from lampada import Lampada
-from conta import Conta
+from conta import ContaPoupanca, ContaCorrente
+
 #chamada da Class Lampada()
 
 
@@ -29,22 +30,14 @@ print(lampada1.estado)
 
 #print(f'Minha lampada é {lampada1.cor}, de potencia {lampada1.cor} para ser usada em {lampada1.tensao} volts e está {lampada1.estado}.')
 
-
-conta_pedro = Conta(123,147,"Pedro")
-conta_jose = Conta(123,147,"José")
 print(f'{25*"-"}Deposito{25*"-"}')
-print(f"Saldo da conta de {conta_pedro.titular} é {conta_pedro.saldo}!")
-conta_pedro.depositar(1000)
-print(f"Novo Saldo da conta de {conta_pedro.titular} é {conta_pedro.saldo}!")
-print(f'{25*"-"}Deposito{25*"-"}')
-print(f"Saldo da conta de {conta_jose.titular} é {conta_jose.saldo}!")
-conta_jose.depositar(500)
-print(f"Novo Saldo da conta de {conta_jose.titular} é {conta_jose.saldo}!")
 
-#conta_jose.sacar(450)
-#print(f"Novo Saldo da conta de {conta_pedro.titular} é {conta_pedro.saldo}!")
-print(f'{25*"-"}Transferência{25*"-"}')
+conta_pedro = ContaCorrente(123,147,"Pedro",0.0)
+conta_jose = ContaCorrente(123,147,"José",1000)
+conta_daniele = ContaPoupanca(963,854,"Daniele")
+conta_manoel = ContaCorrente(555,123,"Manoel",500)
 
-conta_pedro.transferir(500,conta_jose)   
-print(f"Novo Saldo da conta de {conta_pedro.titular} é {conta_pedro.saldo}!")
-print(f"Novo Saldo da conta de {conta_jose.titular} é {conta_jose.saldo}!")
+conta_daniele.depositar(1000)
+print(conta_daniele)
+conta_jose.sacar(500)
+print(conta_jose)
